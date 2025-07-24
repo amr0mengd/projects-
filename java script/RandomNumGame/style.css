@@ -1,0 +1,10 @@
+#myH2, #answer{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#num,#btn {
+  text-align: center;
+  display: block;
+  margin: auto;
+}
