@@ -1,0 +1,54 @@
+body{
+  font-family: Arial, sans-serif;
+  background-color: hsl(0, 0%, 95%);
+}
+
+#myH1{
+  color:coral;
+  font-weight: bold;
+}
+
+form {
+  background-color: white;
+  max-width: 350px;
+  text-align: center;
+  margin: auto;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px hsla(0, 0%, 0%, 0.3);
+}
+
+#input{
+  text-align: center;
+  font-size: 2em;
+  width: 50%;
+  border-radius: 4px;
+}
+
+label{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#btn-1, #btn-2{
+  cursor: pointer;
+}
+
+#submitbtn{
+  font-size: 1.5em;
+  cursor: pointer;
+  background-color: orange;
+  border-radius: 10px;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+}
+
+#submitbtn:hover{
+  background-color: rgb(176, 84, 74);
+}
+
+#result{
+  font-weight: bold;
+  font-size: 1.5em;
+}
