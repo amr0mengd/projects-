@@ -1,0 +1,15 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#inner{
+  background-color: black;
+  color: white;
+  width: 100vh;
+  text-align: center;
+  font-size: 3em;
+  font-family: Arial, Helvetica, sans-serif;
+}
