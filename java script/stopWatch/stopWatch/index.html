@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <title>Stopwatch</title>
+  </head>
+  <body class="bg-gray-300 font-bold min-h-screen">
+    <h1 class="text-6xl text-center my-10">Stopwatch</h1>
+    <div class="flex justify-center items-center">
+      <div class="bg-white min-w-xl border rounded-lg p-5  flex flex-col justify-center items-center">
+        <p id="stopwatch" class="font-mono text-6xl my-5">00:00:00:00</p>
+        <div class="space-x-3 text-2xl mt-2 text-white font-semibold">
+          <button onclick="start()" class="bg-green-500 hover:cursor-pointer hover:bg-green-400 rounded-md pt-1 py-2 px-4">Start</button>
+          <button onclick="stop()" class="bg-red-600 hover:cursor-pointer hover:bg-red-500 rounded-md pt-1 py-2 px-4">Stop</button>
+          <button onclick="reset()" class="bg-blue-500 hover:cursor-pointer hover:bg-blue-400 rounded-md pt-1 py-2 px-4">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/src/main.js"></script>
+  </body>
+</html>
