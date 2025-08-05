@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+button {
+  width: 100px;
+  height: 100px;
+  font-size: 3rem;
+  color: white;
+  background-color: hsl(0, 0%, 20%);
+  border-radius: 100% ;
+  cursor: pointer;
+}
+
+.operators{
+  background-color: rgba(255, 166, 0, 0.829);
+}
