@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <title>Rock_Paper_Scissors</title>
+  </head>
+  <body class="min-h-screen">
+    <h1 class="text-center font-semibold text-6xl my-8">Rock - Paper - Scissors</h1>
+    <div class="flex justify-center p-10 text-9xl space-x-20">
+      <button onclick="playGame('Rock')">👊</button>
+      <button onclick="playGame('Paper')">✋</button>
+      <button onclick="playGame('Scissors')">✌️</button>
+    </div>
+    <div class="font-semibold text-5xl text-center p-10 pt-4 space-y-2">
+      <div id="player">Player: </div>
+      <div id="computer">Computer: </div>
+    </div>
+    <div id="result" class="text-6xl font-bold text-center mb-10"></div>
+    <div class="font-semibold text-3xl text-center space-y-1 font-mono">
+      <div id="playerdisplay">PlayerScore: <span id="green" class="text-green-500">0</span></div>
+      <div id="computerdisplay">ComputerScore: 0</div>
+    </div>
+    <script src="/src/main.js"></script>
+  </body>
+</html>
