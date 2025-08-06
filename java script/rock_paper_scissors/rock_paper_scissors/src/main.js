@@ -41,12 +41,12 @@ function playGame(input){
       case "YOU WIN!":
         result.style.color = 'green';
         playerScore ++;
-        playerDisplay.textContent = `PlayerScore: ${playerScore}`;
+        playerDisplay.textContent = playerScore;
         break;
       case "YOU LOSE!":
         result.style.color = 'red';
         computerScore ++;
-        computerDisplay.textContent = `ComputerScore: ${computerScore}`;
+        computerDisplay.textContent = computerScore;
         break;
     }
 }
