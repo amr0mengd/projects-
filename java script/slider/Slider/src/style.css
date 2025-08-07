@@ -1,1 +1,8 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+.slides img{
+  display: none;
+}
+img.displaySlide{
+  display: block;
+}
