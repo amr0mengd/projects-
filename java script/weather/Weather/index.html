@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <title>Weather App</title>
+  </head>
+  <body class="flex flex-col items-center my-7 min-h-screen">
+    <form class="weatherForm font-bold text-3xl">
+      <input class="cityInput border border-gray-500 w-70 rounded-md py-0.5 px-2" type="text" placeholder="Enter a City">
+      <button type="submit" class="getWeather bg-lightgreen text-white px-2 py-1.5 rounded-md hover:bg-darker cursor-pointer">Get Weather </button>
+    </form>
+    <div class="card my-10 bg-gradient-to-b from-sky to-sun w-sm flex flex-col items-center p-12 font-bold space-y-4 rounded-xl shadow-2xl">
+      <h1 class="cityDisplay text-5xl text-gray-700 pb-1.5">City</h1>
+      <p class="tempDisplay text-5xl text-gray-700 pb-1.5">Temp°C</p>
+      <p class="humidityDisplay text-xl">Humidity: %</p>
+      <p class="descDisplay text-2xl">weather Description</p>
+      <p class="emojiDisplay text-8xl ">❓</p>
+      <p class="errorDisplay text-2xl pt-2">please Enter A City</p>
+    </div>
+    <script src="/src/main.js"></script>
+  </body>
+</html>

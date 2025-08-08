@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-lightgreen: hsl(122, 39%, 50%);
+  --color-darker: hsl(122, 39%, 40%);
+  --color-sky: hsl(210, 100%, 70%);
+  --color-sun: hsl(40, 100%, 70%);
+}
+
+.card {
+  height: 500px;
+}
