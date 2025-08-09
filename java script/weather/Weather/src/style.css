@@ -9,4 +9,20 @@
 
 .card {
   height: 500px;
+  @apply my-10 bg-gradient-to-b from-sky to-sun w-sm flex flex-col items-center justify-around p-12 font-bold space-y-4 rounded-xl shadow-2xl;
+}
+.cityDisplay, .tempDisplay{
+  @apply text-5xl text-gray-700 pb-1.5;
+}
+.humidityDisplay{
+  @apply text-xl; 
+}
+.descDisplay{
+  @apply text-2xl;
+}
+.emojiDisplay{
+  @apply text-8xl;
+}
+.errorDisplay{
+  @apply text-2xl text-center pt-2;
 }
