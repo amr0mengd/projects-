@@ -8,6 +8,9 @@ const app = Vue.createApp({
     };
   },
   methods: {
+    calculateAge(){
+      return this.Age + 5;
+    },
     random(){
       const random = Math.random().toFixed(4);
       return random;
