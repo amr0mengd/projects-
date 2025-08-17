@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>TASK 1</title>
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <section id="ass">
+      <h2>Name: {{Name}}</h2>
+      <p>Age: {{Age}}</p>
+      <p>in 5 years: {{Age + 5}}</p>
+      <p>RandomNum1: {{random()}}</p>
+      <p>RandomNum2: {{Math.random().toFixed(4)}}</p>
+      <div>
+        <img width="400px" v-bind:src="picLink"/>
+      </div>
+      <input type="text" v-model="Name" />
+    </section>
+  </body>
+</html>

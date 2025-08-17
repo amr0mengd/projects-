@@ -1,0 +1,49 @@
+*{
+  box-sizing: border-box;
+}
+html{
+  font-family: 'jost', sans-serif;
+}
+body{
+  color: white;
+  margin: 0;
+}
+header{
+  padding: 16px;
+  height: 120px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+  width: 500px;
+  background-color: #4fc08d ;
+}
+#user-goal{
+  padding: 0.5rem;
+  height: fit-content;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  text-align: center;
+  margin: 1.5rem auto;
+  max-width: 500px;
+}
+#green{
+  width: 95%;
+  padding-top: 4px;
+  font-size: 2rem;
+  color: #4fc08d;
+  border-bottom: 4px solid #ccc;
+  margin: 0 auto 1rem;
+}
+p{
+  padding: 0.5rem;
+  margin: auto auto 1rem;
+  border-radius: 25px;
+  width: 95%;
+  background-color: #4fc08d;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border: 1px solid #4fc08d;
+}
