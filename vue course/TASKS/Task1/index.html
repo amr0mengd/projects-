@@ -16,11 +16,12 @@
     <section id="ass">
       <h2>Name: {{Name}}</h2>
       <p>Age: {{Age}}</p>
-      <p>in 5 years: {{Age + 5}}</p>
+      <p>{{Age + 5}} in 5 years</p>
       <p>RandomNum1: {{random()}}</p>
       <p>RandomNum2: {{Math.random().toFixed(4)}}</p>
+      <p v-html="rad"></p>
       <div>
-        <img width="400px" v-bind:src="picLink"/>
+        <img width="400px" v-bind:src="picLink" />
       </div>
       <input type="text" v-model="Name" />
     </section>
