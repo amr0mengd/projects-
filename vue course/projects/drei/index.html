@@ -23,6 +23,22 @@
       <!-- <button v-on:click="decrease">Reduce</button> -->
       <button v-on:click="decrease(4)">Reduce</button>
       <p>Result: {{ counter }}</p>
+      <!-- this v-on provides a fixed argument that is event without even calling it-->
+      <!-- <input type="text" v-on:input="setName"> -->
+      <!-- you can also use an argument of your own but you have to declare the event arg with $ -->
+      <input
+        type="text"
+        v-on:input="setName($event, 'monged')"
+        v-on:keyup.enter="confirmed"
+      />
+      <p>Your Name: {{ confirmedName }}</p>
+      <!-- you can preventDefault by using a function... -->
+      <!-- <form v-on:submit="submitForm"> -->
+      <!-- ...or by using a modifier from vue for v-on:submit using zwei v-on just to clarify -->
+      <form v-on:submit.prevent v-on:submit="submitForm">
+        <input type="text" />
+        <button>Sign Up</button>
+      </form>
     </section>
   </body>
 </html>
