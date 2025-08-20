@@ -18,10 +18,12 @@
       <h2>Events in Action</h2>
       <!-- <button v-on:click="counter++">Add</button>
       <button v-on:click="counter--">Reduce</button> -->
-      <button v-on:click="increase(4)">Add</button>
+      <button v-on:click="increase(2)">Add</button>
       <!-- you can use a function as it is or as a callback -->
       <!-- <button v-on:click="decrease">Reduce</button> -->
-      <button v-on:click="decrease(4)">Reduce</button>
+      <button v-on:click="decrease(2)">Reduce</button>
+      <!--v-once locks the initial value of the variable that you'r using even if the variable changes-->
+      <p v-once>Starting {{ counter }}</p>
       <p>Result: {{ counter }}</p>
       <!-- this v-on provides a fixed argument that is event without even calling it-->
       <!-- <input type="text" v-on:input="setName"> -->
