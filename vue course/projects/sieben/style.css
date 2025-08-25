@@ -1,38 +1,44 @@
 @import "tailwindcss";
-*{
+* {
   box-sizing: border-box;
 }
 
-html{
-  font-family: "Jost" , sans-serif;
+html {
+  font-family: "Jost", sans-serif;
 }
-body{
+body {
   font-weight: bold;
   margin: 0;
 }
-
-
-header{
-  @apply bg-[#880017] text-center text-6xl text-white py-7 pb-8 mb-8 shadow-2xl
+header {
+  @apply bg-[#880017] text-center text-6xl text-white py-7 pb-8 mb-8 shadow-2xl;
 }
-#game{
-  @apply space-y-7 text-center
+#game {
+  @apply space-y-7 text-center;
 }
-#monster, #player{
-  @apply mx-auto w-[90%] text-3xl space-y-5
+#monster,
+#player {
+  @apply mx-auto w-[90%] text-3xl space-y-5;
 }
-.healthbar{
-  @apply h-[50px] border border-[#575757] my-2 bg-[#fde5e5]
+.healthbar {
+  @apply h-[50px] border border-[#575757] my-2 bg-[#fde5e5];
 }
-.healthbar_value{
-  @apply bg-[#00a876] h-[48px] 
+.healthbar_value {
+  @apply bg-[#00a876] h-[48px];
 }
-.controls{
-  @apply flex flex-wrap items-center gap-x-16 gap-10 justify-center w-[750px] mx-auto py-7 px-20 max-w-screen text-xl
+.controls {
+  @apply flex flex-wrap items-center gap-x-16 gap-10 justify-center w-[750px] mx-auto py-7 px-20 max-w-screen text-xl;
 }
-.controls button{
-  @apply bg-[#88005b] active:bg-[#c13d8c] hover:bg-[#af0a78] border border-[#88005b] text-white font-semibold h-[60px] w-[180px] rounded-xl cursor-pointer
+.controls button {
+  @apply bg-[#88005b] active:bg-[#c13d8c] hover:bg-[#af0a78] border border-[#88005b]
+  text-white font-semibold h-[60px] w-[180px] rounded-xl cursor-pointer disabled:bg-gray-400 disabled:border-none disabled:text-gray-700;
 }
-#log{
-  @apply mx-auto text-3xl
+#log {
+  @apply mx-auto text-3xl;
+}
+#game_over h2{
+  @apply text-5xl my-5
+}
+#game_over h3{
+  @apply text-4xl
 }

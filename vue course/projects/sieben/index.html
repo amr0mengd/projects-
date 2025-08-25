@@ -23,7 +23,7 @@
           <!-- you cant directly use % after the monsterHealth so you add as a str -->
           <div
             class="healthbar_value"
-            :style="{width: monsterHealth + '%'}"
+            :style="monsterBarStyle"
           ></div>
         </div>
       </section>
@@ -32,15 +32,21 @@
         <div class="healthbar">
           <div
             class="healthbar_value"
-            :style="{width: playerHealth + '%'}"
+            :style="playerBarStyle "
           ></div>
         </div>
       </section>
+      <section class="container" id="game_over" v-if="winner">
+        <h2>Game Over</h2>
+        <h3 v-if="winner === 'player'" class="text-green-600">You Win!</h3>
+        <h3 v-else-if="winner === 'monster'" class="text-red-500">You Lose!</h3>
+        <h3 v-else class="text-blue-600">Draw</h3>
+      </section>
       <section class="controls">
         <button @click="attackMonster">ATTACK</button>
-        <button>SPECIAL ATTACK</button>
-        <button>HEAL</button>
-        <button>SURRENDER</button>
+        <button :disabled="round % 3 !== 0" @click="specialAttack">SPECIAL ATTACK</button>
+        <button @click="Heal">HEAL</button>
+        <button @click="surrender">SURRENDER</button>
       </section>
       <section id="log" class="container">
         <h2>Battle Log</h2>
