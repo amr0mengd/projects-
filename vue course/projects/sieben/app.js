@@ -5,14 +5,15 @@ const app = Vue.createApp({
       playerHealth: 100,
       round: 0,
       winner: null,
+      log: [],
     };
   },
   computed: {
     monsterBarStyle() {
       if (this.winner && this.winner === "player") {
-        return { width: 0 + "%" };
+        return { width: "0%" };
       } else if (this.winner && this.winner === "draw") {
-        return { width: 0 + "%" };
+        return { width: "0%" };
       } else {
         return { width: this.monsterHealth + "%" };
       }
@@ -44,6 +45,16 @@ const app = Vue.createApp({
     },
   },
   methods: {
+    startTheGame() {
+      this.playerHealth = 100;
+      this.monsterHealth = 100;
+      this.round = 0;
+      this.winner = null;
+      this.log = [];
+    },
+    /*every control method has an if (!this.winner) i did it before the course to prevent the user 
+from using the controls after ending the game but in the course we hide the controls after the game 
+so iam leaving it for me and iam hiding the controls as in the project*/
     attackMonster() {
       if (!this.winner) {
         this.round++;
@@ -51,6 +62,7 @@ const app = Vue.createApp({
         this.monsterHealth -= damage;
         // you can call methods like data with this
         this.attackPlayer();
+        this.addLog("player", "damages monster for", `${damage}HP`);
       }
     },
     specialAttack() {
@@ -59,11 +71,13 @@ const app = Vue.createApp({
         const damage = randomValue(20, 10);
         this.monsterHealth -= damage;
         this.attackPlayer();
+        this.addLog("player", "damages the monster for", `${damage}HP`);
       }
     },
     attackPlayer() {
       const damage = randomValue(15, 8);
       this.playerHealth -= damage;
+      this.addLog("monster", "damages player for", `${damage}HP`);
     },
     Heal() {
       if (!this.winner) {
@@ -75,10 +89,20 @@ const app = Vue.createApp({
           this.playerHealth += heal;
         }
         this.attackPlayer();
+        this.addLog("player", "heals himself for", `${heal}HP`);
       }
     },
     surrender() {
-      this.winner = "monster"
+      if (!this.winner) {
+        this.winner = "monster";
+      }
+    },
+    addLog(who, what, value) {
+      this.log.unshift({
+        By: who,
+        action: what,
+        value: value,
+      });
     },
   },
 });

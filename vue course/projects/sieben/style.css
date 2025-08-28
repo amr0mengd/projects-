@@ -29,16 +29,22 @@ header {
 .controls {
   @apply flex flex-wrap items-center gap-x-16 gap-10 justify-center w-[750px] mx-auto py-7 px-20 max-w-screen text-xl;
 }
-.controls button {
+button {
   @apply bg-[#88005b] active:bg-[#c13d8c] hover:bg-[#af0a78] border border-[#88005b]
   text-white font-semibold h-[60px] w-[180px] rounded-xl cursor-pointer disabled:bg-gray-400 disabled:border-none disabled:text-gray-700;
 }
 #log {
-  @apply mx-auto text-3xl;
+  @apply mx-auto text-4xl;
 }
-#game_over h2{
-  @apply text-5xl my-5
+#game_over {
+  @apply space-y-5;
 }
-#game_over h3{
-  @apply text-4xl
+#game_over h2 {
+  @apply text-5xl my-5;
+}
+#game_over h3 {
+  @apply text-4xl;
+}
+#log li {
+  @apply text-2xl my-3 border  w-[70%] mx-auto bg-gray-400 py-2;
 }
