@@ -16,20 +16,20 @@
 export default {
   data() {
     return {
-      friends: [
-        {
-          id: "manuel",
-          name: "Manuel Lorenz",
-          phone: "0123 45678 90",
-          email: "manuel@localhost.com",
-        },
-        {
-          id: "julie",
-          name: "Julie Jones",
-          phone: "089 13478 90",
-          email: "julie@localhost.com",
-        },
-      ],
+      // friends: [
+      //   {
+      //     id: "manuel",
+      //     name: "Manuel Lorenz",
+      //     phone: "0123 45678 90",
+      //     email: "manuel@localhost.com",
+      //   },
+      //   {
+      //     id: "julie",
+      //     name: "Julie Jones",
+      //     phone: "089 13478 90",
+      //     email: "julie@localhost.com",
+        // },
+      // ],
     };
   },
 };
