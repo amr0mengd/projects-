@@ -1,0 +1,11 @@
+@import "tailwindcss";
+html {
+  font-family: "Jost", sans-serif;
+}
+
+header {
+  @apply mx-auto text-center flex flex-col items-center justify-center my-12 text-4xl font-bold bg-[#58004d] text-white w-[650px] h-[125px] rounded-xl;
+}
+#app {
+  @apply mx-auto flex flex-col justify-center items-center w-[650px] h-fit p-7 shadow-2xl text-3xl font-bold;
+}

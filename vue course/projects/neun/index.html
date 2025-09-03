@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>using Components</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="container">
+      <h1>Friend List</h1>
+    </header>
+    <!-- this tag won't work because it's out of the app.mount -->
+    <friend-contact></friend-contact>
+    <section id="app" class="container">
+      <ul>
+        <friend-contact></friend-contact>
+        <friend-contact></friend-contact>
+      </ul>
+    </section>
+  </body>
+</html>
