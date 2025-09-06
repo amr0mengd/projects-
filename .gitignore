@@ -1,0 +1,73 @@
+# ================================
+# Dependencies & Lockfiles
+# ================================
+# Ignore ALL node_modules folders, anywhere in the repo
+**/node_modules/
+
+# Ignore package manager lockfiles in ALL directories
+**/package-lock.json
+**/npm-shrinkwrap.json
+**/yarn.lock
+**/pnpm-lock.yaml
+
+# ================================
+# IDE & Editor
+# ================================
+# Ignore ALL .vscode folders and their contents, anywhere in the repo
+**/.vscode/
+
+# ================================
+# Vue.js & Vite (Build Output)
+# ================================
+# Ignore build output directories
+dist/
+build/
+*.tsbuildinfo
+
+# ================================
+# Environment & Local Configs
+# ================================
+# Ignore environment variables files
+.env
+.env.*
+!.env.example  # Keep this template file if you have it
+
+# ================================
+# OS & Logs
+# ================================
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ================================
+# Runtime & Coverage
+# ================================
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Optional: Dependency directories for other languages
+jspm_packages/
+
+# Optional: Electron build output
+out/
