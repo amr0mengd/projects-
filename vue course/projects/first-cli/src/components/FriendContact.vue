@@ -2,37 +2,49 @@
   <li>
     <h2>{{ name }}</h2>
     <button @click="toggleDetails">
-      {{ detailsAreVisible ? "Hide" : "Show" }} details
+      {{ isVisible ? "Hide" : "Show" }} Details
     </button>
-    <ul v-if="detailsAreVisible">
-      <li><strong>Phone:</strong>{{ phoneNumber }}</li>
-      <li><strong>Email:</strong>{{ email }}</li>
+    <ul v-if="isVisible">
+      <li><strong>Phone:</strong> {{ phoneNumber }}</li>
+      <li><strong>Email:</strong> {{ email }}</li>
     </ul>
   </li>
 </template>
 
 <script>
 export default {
-  props:[
-    "name",
-    "phoneNumber",
-    "email"
-  ],
+  // props: ["name", "phoneNumber", "email"],
+  props:{
+    name: {
+      type: String,
+      required: true, 
+    },
+    phoneNumber:{
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
-      detailsAreVisible: false,
-      // friend: {
-      //   id: "manuel",
-      //   name: "Manuel Lorenz",
-      //   phone: "0123 45678 90",
-      //   email: "manuel@localhost.com",
-      // },
+      friend: {
+        id: "manuel",
+        name: "Manuel Lorenz",
+        phone: "0123 45678 90",
+        email: "manuel@localhost.com",
+      },
+      isVisible: false,
     };
   },
   methods: {
     toggleDetails() {
-      this.detailsAreVisible = !this.detailsAreVisible;
+      this.isVisible = !this.isVisible;
     },
   },
 };
 </script>
+
+<style></style>
