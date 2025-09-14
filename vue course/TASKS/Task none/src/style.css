@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --font-jost: "Jost", sans-serif;
+}
+input {
+  @apply border border-gray-300;
+}
+
