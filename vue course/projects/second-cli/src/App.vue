@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- these attributes are conditions to check if the active topic null or has a topic and then outputting it -->
     <active-element
       :topic-title="activeTopic && activeTopic.title"
       :text="activeTopic && activeTopic.fullText"
