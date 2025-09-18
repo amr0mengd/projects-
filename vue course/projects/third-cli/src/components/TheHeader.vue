@@ -4,6 +4,8 @@
 
 <style scoped>
   header {
+    top: 0%;
+    position: fixed;
     width: 100%;
     height: 5rem;
     display: flex;
