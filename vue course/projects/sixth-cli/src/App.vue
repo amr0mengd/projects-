@@ -1,11 +1,43 @@
 <template>
   <div>
-    
+    <learning-survey></learning-survey>
+    <user-experiences></user-experiences>
   </div>
 </template>
 
 <script>
-export default {};
+import LearningSurvey from "./components/survey/LearningSurvey.vue";
+import UserExperiences from "./components/survey/UserExperiences.vue";
+export default {
+  components: { LearningSurvey, UserExperiences },
+  data() {
+    return {
+      savedSurveyResult: [],
+    };
+  },
+  // methods: {
+  //   storeSurvey(surveyData) {
+  //     const surveyResult = {
+  //       name: surveyData.userName,
+  //       rating: surveyData.rating,
+  //       id: new Date().toISOString(),
+  //     };
+  //     this.savedSurveyResult.push(surveyResult);
+  //   },
+  // },
+};
 </script>
 
-<style></style>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+</style>
