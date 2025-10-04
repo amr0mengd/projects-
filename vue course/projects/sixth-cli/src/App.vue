@@ -10,11 +10,11 @@ import LearningSurvey from "./components/survey/LearningSurvey.vue";
 import UserExperiences from "./components/survey/UserExperiences.vue";
 export default {
   components: { LearningSurvey, UserExperiences },
-  data() {
-    return {
-      savedSurveyResult: [],
-    };
-  },
+  // data() {
+  //   return {
+  //     savedSurveyResult: [],
+  //   };
+  // },
   // methods: {
   //   storeSurvey(surveyData) {
   //     const surveyResult = {
