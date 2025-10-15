@@ -1,15 +1,17 @@
 <template>
-  <h2>{{ teamName }}</h2>
-  <ul>
-    <user-item
-      v-for="member in members"
-      :key="member.id"
-      :id="member.id"
-      :name="member.fullName"
-      :role="member.role"
-    ></user-item>
-  </ul>
-  <router-link to="/teams/t2">Go to Team 2</router-link>
+  <section>
+    <h2>{{ teamName }}</h2>
+    <ul>
+      <user-item
+        v-for="member in members"
+        :key="member.id"
+        :id="member.id"
+        :name="member.fullName"
+        :role="member.role"
+      ></user-item>
+    </ul>
+    <router-link to="/teams/t2">Go to Team 2</router-link>
+  </section>
 </template>
 
 <script>
@@ -41,6 +43,13 @@ export default {
   created() {
     // this.$route.path
     this.loadTeamMembers(this.teamId);
+  },
+  beforeRouteUpdate(to, from, next) {
+    console.log("TeamMembers Cmp beforeRouteUpdate");
+    console.log(to, from);
+    //the next line works like the watch method below but the watch is more flexible
+    // this.loadTeamMembers(to.params.teamId);
+    next();
   },
   watch: {
     teamId(newId) {

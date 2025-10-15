@@ -1,6 +1,7 @@
 <template>
   <!-- this button to show programmatic navigation -->
   <button @click="confirmPage">Confirm</button>
+  <button @click="saveChanges">Save Changes</button>
   <ul>
     <user-item
       v-for="user in users"
@@ -16,11 +17,33 @@ import UserItem from "./UserItem.vue";
 export default {
   components: { UserItem },
   inject: ["users"],
+  data() {
+    return { changesSaved: false };
+  },
   methods: {
     confirmPage() {
       //do something
       this.$router.push("/teams");
     },
+    saveChanges() {
+      this.changesSaved = true;
+    },
+  },
+  beforeRouteLeave(to, from, next) {
+    console.log("UsersList Cmp beforeRouteLeave");
+    console.log(to, from);
+
+    if (this.changesSaved) {
+      next();
+    } else {
+      const userWantsToLeave = confirm(
+        "Are you sure? You got unsaved changes!"
+      );
+      next(userWantsToLeave);
+    }
+  },
+  unmounted() {
+    console.log("unmounted");
   },
 };
 </script>

@@ -1,8 +1,9 @@
 <template>
-  <the-navigation @set-page="setActivePage"></the-navigation>
+  <the-navigation></the-navigation>
   <main>
     <!-- <component :is="activePage"></component> -->
     <router-view></router-view>
+    <router-view name="footer"></router-view>
   </main>
 </template>
 
