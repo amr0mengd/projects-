@@ -1,16 +1,43 @@
 <template>
-  <div>
+  <router-view v-slot="slotProps">
+    <transition name="fade-button" mode="out-in">
+      <component :is="slotProps.Component"></component>
+    </transition>
+  </router-view>
+</template>
+<!-- <template> -->
+  <!-- <div>
+    <div class="container">
+        <users-list></users-list>
+    </div>
     <div class="container">
       <div class="block" :class="{ animate: animatedBlock }"></div>
       <button @click="animateBlock">animate</button>
     </div>
     <div class="container">
-      <transition name="para">
+      <transition
+        name="para"
+        :css="false"
+        @before-enter="beforeEnter"
+        @enter="enter"
+        @after-enter="afterEnter"
+        @before-leave="beforeLeave"
+        @leave="leave"
+        @after-leave="afterLeave"
+        @enter-cancelled="enterCancelled"
+        @leave-cancelled="leaveCancelled"
+      >
         <p v-if="paraIsVisible">This paragraph is only shown sometimes.....</p>
       </transition>
       <button @click="toggleParagraph">Toggle Paragraph</button>
     </div>
-    <base-modal @close="hideDialog" v-if="dialogIsVisible">
+    <div class="container">
+      <transition name="fade-button" mode="out-in">
+        <button @click="showUsers" v-if="!usersAreVisible">Show Users</button>
+        <button @click="hideUsers" v-else>Hide Users</button>
+      </transition>
+    </div>
+    <base-modal @close="hideDialog" :open="dialogIsVisible">
       <p>This is a test dialog!!</p>
       <button @click="hideDialog">Close it</button>
     </base-modal>
@@ -18,18 +45,73 @@
       <button @click="showDialog">Show Dialog</button>
     </div>
   </div>
-</template>
+</template> -->
 
 <script>
+import UsersList from "./components/UsersList.vue";
 export default {
+  components: { UsersList },
   data() {
     return {
       paraIsVisible: false,
       animatedBlock: false,
       dialogIsVisible: false,
+      usersAreVisible: true,
     };
   },
   methods: {
+    enterCancelled(el) {
+      console.log(el);
+      clearInterval(this.enterInterval);
+    },
+    leaveCancelled(el) {
+      console.log(el);
+      clearInterval(this.leaveInterval);
+    },
+    beforeEnter(el) {
+      console.log("beforeEnter");
+      console.log(el);
+      el.style.opacity = 0;
+    },
+    enter(el, done) {
+      console.log("enter");
+      console.log(el);
+      let round = 1;
+      this.enterInterval = setInterval(() => {
+        el.style.opacity = round * 0.01;
+        round++;
+        if (round > 100) {
+          clearInterval(this.enterInterval);
+          done();
+        }
+      }, 20);
+    },
+    afterEnter(el) {
+      console.log("afterEnter");
+      console.log(el);
+    },
+    beforeLeave(el) {
+      console.log("beforeLeave");
+      console.log(el);
+      el.style.opacity = 1;
+    },
+    leave(el, done) {
+      console.log("leave");
+      console.log(el);
+      let round = 1;
+      this.leaveInterval = setInterval(() => {
+        el.style.opacity = 1 - round * 0.01;
+        round++;
+        if (round > 100) {
+          clearInterval(this.leaveInterval);
+          done();
+        }
+      }, 20);
+    },
+    afterLeave(el) {
+      console.log("afterLeave");
+      console.log(el);
+    },
     showDialog() {
       this.dialogIsVisible = true;
     },
@@ -41,6 +123,12 @@ export default {
     },
     animateBlock() {
       this.animatedBlock = true;
+    },
+    showUsers() {
+      this.usersAreVisible = true;
+    },
+    hideUsers() {
+      this.usersAreVisible = false;
     },
   },
 };
@@ -92,27 +180,39 @@ button:active {
   /* if we add forwards it stays at step 100% but default is that it comes back to it's starting style */
   animation: slide-scale 0.5s ease-out forwards;
 }
-.para-enter-from {
+
+.para-enter-from,
+.para-leave-to {
   opacity: 0;
   transform: translateY(-30px);
 }
 .para-enter-active {
-  /* animation: slide-scale 0.5s ease-out; */
+  transition: all 0.5s ease-out;
+  /* animation: slide-scale 0.5s ease-out;  */
 }
-.para-enter-to {
-  opacity: 1;
-  transform: translateY(0px);
-}
-
+.para-enter-to,
 .para-leave-from {
   opacity: 1;
   transform: translateY(0px);
 }
+
 .para-leave-active {
+  transition: all 0.5s ease-in;
 }
-.para-leave-to {
+
+.fade-button-enter-from,
+.fade-button-leave-to {
   opacity: 0;
-  transform: translateY(30px);
+}
+.fade-button-enter-active {
+  transition: all 0.5s ease-out;
+}
+.fade-button-leave-active {
+  transition: all 0.5 ease-in;
+}
+.fade-button-enter-to,
+.fade-button-leave-from {
+  opacity: 1;
 }
 @keyframes slide-scale {
   0% {
