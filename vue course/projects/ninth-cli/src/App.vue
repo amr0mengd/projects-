@@ -7,7 +7,7 @@
       <change-counter></change-counter>
     </base-container>
     <base-container>
-      <button @click="setAuth">toggle</button>
+      <user-auth></user-auth>
     </base-container>
   </div>
 </template>
@@ -17,8 +17,9 @@ import BaseContainer from "./components/BaseContainer.vue";
 import TheCounter from "./components/TheCounter.vue";
 import ChangeCounter from "./components/ChangeCounter.vue";
 import FavoriteValue from "./components/FavoriteValue.vue";
+import UserAuth from "./components/UserAuth.vue";
 export default {
-  components: { BaseContainer, TheCounter, ChangeCounter, FavoriteValue },
+  components: { BaseContainer, TheCounter, ChangeCounter, FavoriteValue, UserAuth },
   computed: {
     isAuth() {
       return this.$store.getters.userAuthenticated;
@@ -31,9 +32,6 @@ export default {
         type: "increase",
         value: 10,
       });
-    },
-    setAuth() {
-      this.$store.commit("setAuth");
     },
   },
 };
