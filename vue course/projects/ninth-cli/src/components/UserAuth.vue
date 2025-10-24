@@ -1,6 +1,7 @@
 <template>
   <button @click="logIn" v-if="!isAuth">Log in</button>
-  <button @click="logOut" v-else>Log out</button>
+  <button @click="logOut" v-if="isAuth">Log out</button>
+  <p>{{ isTestAuth  }}</p>
 </template>
 
 <script>
@@ -11,7 +12,8 @@ export default{
   },
   computed: {
     ...mapGetters({
-      isAuth: 'userAuthenticated'
+      isAuth: 'userAuthenticated',
+      isTestAuth: 'testAuth'
     })
   }
 }

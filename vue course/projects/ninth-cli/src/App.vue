@@ -6,7 +6,7 @@
       <button @click="addOne">Add 10</button><br />
       <change-counter></change-counter>
     </base-container>
-    <base-container>
+    <base-container title="Auth">
       <user-auth></user-auth>
     </base-container>
   </div>
@@ -29,7 +29,7 @@ export default {
     addOne() {
       // this.$store.dispatch("increase", { value: 10 });
       this.$store.dispatch({
-        type: "increase",
+        type: "numbers/increase",
         value: 10,
       });
     },
