@@ -32,7 +32,7 @@ const productsModule = {
     };
   },
   getters: {
-    products(state) {
+    prods(state) {
       return state.products;
     },
   },

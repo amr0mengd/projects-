@@ -6,7 +6,8 @@ const cartModule = {
     };
   },
   mutations: {
-    addProductToCart(state, productData) {
+    addProductToCart(state, payload) {
+      const productData = payload;
       //findIndex will return -1 if there's no item or index found
       const productInCartIndex = state.cart.items.findIndex(
         (ci) => ci.productId === productData.id
@@ -37,8 +38,11 @@ const cartModule = {
     },
   },
   actions: {
-    addProductToCart(context, productData) {
-      context.commit("addProductToCart", productData);
+    addProductToCart(context, payload) {
+      const prodId = payload.id;
+      const products = context.rootGetters.prods;
+      const product = products.find((prod) => prod.id === prodId);
+      context.commit("addProductToCart", product);
     },
     removeProductFromCart(context, prodId) {
       context.commit("removeProductFromCart", prodId);
