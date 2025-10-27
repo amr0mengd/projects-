@@ -6,7 +6,7 @@
     </h3>
     <ul>
       <cart-item
-        v-for="item in cart.items"
+        v-for="item in items"
         :key="item.id"
         :prod-id="item.productId"
         :image="item.image"
@@ -22,10 +22,12 @@
 import CartItem from "@/components/cart/CartItem.vue";
 export default {
   components: { CartItem },
-  inject: ["cart"],
   computed: {
     cartTotal() {
-      return this.cart.total.toFixed(2);
+      return this.$store.getters["cart/cartTotal"];
+    },
+    items() {
+      return this.$store.getters["cart/items"];
     },
   },
 };
