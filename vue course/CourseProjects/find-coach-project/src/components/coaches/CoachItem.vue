@@ -27,7 +27,7 @@ export default {
       return this.firstName + " " + this.lastName;
     },
     coachContactLink() {
-      return this.$route.path + "/" + this.id + "contact"; //coaches/:id/contact
+      return this.$route.path + "/" + this.id + "/contact"; //coaches/:id/contact
     },
     coachDetailsLink() {
       return this.$route.path + "/" + this.id; //coaches/:id

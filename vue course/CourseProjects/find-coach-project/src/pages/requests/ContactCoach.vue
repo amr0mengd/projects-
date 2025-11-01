@@ -42,7 +42,7 @@ export default {
         email: this.email,
         message: this.message,
       });
-      this.$router.replace("coaches");
+      this.$router.replace("/coaches");
     },
   },
 };
