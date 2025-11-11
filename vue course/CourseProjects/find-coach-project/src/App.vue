@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     didAutoLogout() {
-      this.$store.getters.didAutoLogout;
+      return this.$store.getters.didAutoLogout;
     },
   },
   watch: {
