@@ -39,22 +39,28 @@ export default {
   },
   computed: {
     fullName() {
-      return this.selectedCoach.firstName + " " + this.selectedCoach.lastName;
+      return this.selectedCoach
+        ? this.selectedCoach.firstName + " " + this.selectedCoach.lastName
+        : "";
     },
     contactLink() {
       return this.$route.path + "/contact";
     },
     areas() {
-      return this.selectedCoach.areas;
+      return this.selectedCoach ? this.selectedCoach.areas : [];
     },
     rate() {
-      return this.selectedCoach.hourlyRate;
+      return this.selectedCoach ? this.selectedCoach.hourlyRate : 0;
     },
     description() {
-      return this.selectedCoach.description;
+      return this.selectedCoach ? this.selectedCoach.description : "";
     },
   },
-  created() {
+  async created() {
+    // Only fetch if coaches aren't loaded or if we should update
+    if (this.$store.getters["coaches/shouldUpdate"]) {
+      await this.$store.dispatch("coaches/loadCoaches");
+    }
     this.selectedCoach = this.$store.getters["coaches/coaches"].find(
       (coach) => coach.id === this.id
     );
