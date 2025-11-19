@@ -1,6 +1,6 @@
 import { ref, computed, watch } from "vue";
 
-export default function useSearch(items) {
+export default function useSearch(items, searchProp) {
   const enteredSearchTerm = ref("");
   const activeSearchTerm = ref("");
 
@@ -10,8 +10,10 @@ export default function useSearch(items) {
       filteredItems = items.value.filter((item) =>
         item[searchProp].includes(activeSearchTerm.value)
       );
+    } else if (items.value) {
+      filteredItems = items.value;
     }
-    return items.projects;
+    return filteredItems;
   });
   function updateSearch(val) {
     enteredSearchTerm.value = val;

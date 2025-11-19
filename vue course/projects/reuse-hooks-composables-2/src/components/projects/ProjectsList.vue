@@ -30,7 +30,11 @@ export default {
   components: { ProjectItem },
   props: ["user"],
   setup(props) {
-    const [enteredSearchTerm, availableProjects, updateSearch] = useSearch(props.user);
+    user = toRefs(props);
+    const [enteredSearchTerm, availableProjects, updateSearch] = useSearch(
+      user,
+      "title"
+    );
     // const enteredSearchTerm = ref("");
     // const activeSearchTerm = ref("");
 
