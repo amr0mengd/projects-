@@ -4,7 +4,7 @@ export default function useSearch(items, searchProp) {
   const enteredSearchTerm = ref("");
   const activeSearchTerm = ref("");
 
-  const availableProjects = computed(() => {
+  const availableItems = computed(() => {
     let filteredItems = [];
     if (activeSearchTerm.value) {
       filteredItems = items.value.filter((item) =>
@@ -26,5 +26,5 @@ export default function useSearch(items, searchProp) {
       }
     }, 300);
   });
-  return [enteredSearchTerm, availableProjects, updateSearch];
+  return [enteredSearchTerm, availableItems, updateSearch];
 }

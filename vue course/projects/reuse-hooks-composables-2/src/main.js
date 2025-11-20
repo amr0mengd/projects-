@@ -1,4 +1,11 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+import BaseSearch from "./components/UI/BaseSearch.vue";
+import BaseContainer from "./components/UI/BaseContainer.vue";
 
-createApp(App).mount('#app')
+const app = createApp(App);
+
+app.component("base-search", BaseSearch);
+app.component("base-container", BaseContainer);
+
+app.mount("#app");

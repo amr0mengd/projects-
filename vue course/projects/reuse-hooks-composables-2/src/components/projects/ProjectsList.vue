@@ -30,9 +30,12 @@ export default {
   components: { ProjectItem },
   props: ["user"],
   setup(props) {
-    user = toRefs(props);
+    const { user } = toRefs(props);
+    const projects = computed(() => {
+      return user.value ? user.value.projects : [];
+    });
     const [enteredSearchTerm, availableProjects, updateSearch] = useSearch(
-      user,
+      projects,
       "title"
     );
     // const enteredSearchTerm = ref("");
@@ -47,7 +50,7 @@ export default {
     //   return props.user.projects;
     // });
     const hasProjects = computed(() => {
-      return props.user.projects && availableProjects.value.length > 0;
+      return user.value.projects && availableProjects.value.length > 0;
     });
 
     // function updateSearch(val) {
@@ -61,7 +64,6 @@ export default {
     //     }
     //   }, 300);
     // });
-    const { user } = toRefs(props);
     watch(user, () => {
       enteredSearchTerm.value = "";
     });
