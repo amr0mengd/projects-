@@ -49,9 +49,9 @@ const app = Vue.createApp({
     //   }
     //   return this.name + " " + "monged";
     // },
-    setName(event) {
-      this.name = event.target.value;
-    },
+    // setName(event) {
+    //   this.name = event.target.value;
+    // },
     add(num) {
       this.counter = this.counter + num;
     },
