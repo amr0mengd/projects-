@@ -14,7 +14,7 @@ header {
   @apply bg-[#880017] text-center text-6xl text-white py-7 pb-8 mb-8 shadow-2xl;
 }
 #game {
-  @apply space-y-7 text-center;
+  @apply space-y-7 text-center flex flex-col items-center;
 }
 #monster,
 #player {
