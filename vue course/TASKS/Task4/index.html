@@ -22,12 +22,14 @@
       <input type="text" v-model="Class" />
       <!-- (available classes: "user1", "user2") -->
       <!-- <p :class="[inputClass ,toggle ? 'visible' : 'hidden']"> -->
+        <h1>available classes "user1" and "user2"</h1>
       <p :class="inputClass">{{ Class ? Class : 'Style me!' }}</p>
       <button @click="tog">Toggle Paragraph</button>
       <!-- 2) Use the "visible" and "hidden" classes to show/ hide the above paragraph -->
       <!-- Clicking the button should toggle between the two options -->
 
       <!-- 3) Add dynamic inline styling to the below paragraph and let the user enter a background-color -->
+      <h1>Enter a background color</h1>
       <input type="text" v-model="bg" />
       <!-- if you're calling a variable such as bg here you don't put '' unlike if you want to type a fixed color you must but ''-->
       <p :style="{backgroundColor: bg}">Style me inline!</p>
