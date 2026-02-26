@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -18,12 +18,14 @@
     </header>
     <section id="assignment">
       <h2>Assignment</h2>
-      <form @submit.prevent>
+      <form @submit.prevent="addTask">
         <input type="text" v-model="enteredTask" />
-        <button @click="addTask">Add Task</button>
+        <!-- instead of using the event submit.prevent=addTask -->
+        <!-- <button @click="addTask">Add Task</button> -->
+        <button>Add Task</button>
       </form>
       <!-- you shouldn't put v-if and v-for on the same tag as that would take a toll on vue to render every li on the ul
-       instead use it on the ul so that vue just render one item that is the ul -->
+      instead use it on the ul so that vue just render one item that is the ul -->
       <ul v-if="isVisible">
         <li
           @click="removeTask(index)"
