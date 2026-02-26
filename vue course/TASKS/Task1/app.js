@@ -14,6 +14,9 @@ const app = Vue.createApp({
     random(){
       const random = Math.random().toFixed(4);
       return random;
+    },
+    nameSync(event){
+      this.Name = event.target.value;
     }
   },
 });

@@ -19,11 +19,13 @@
       <p>{{calculateAge()}} in 5 years</p>
       <p>RandomNum1: {{random()}}</p>
       <p>RandomNum2: {{Math.random().toFixed(4)}}</p>
-      <p v-html="rad"></p>
+      <!-- either method works -->
+      <!-- <p v-html="rad"></p> -->
+      <p>{{rad}}</p>
       <div>
         <img width="400px" v-bind:src="picLink" />
       </div>
-      <input type="text" v-bind:value="Name" />
+      <input type="text" v-bind:value="Name" v-on:input="nameSync" />
     </section>
   </body>
 </html>
