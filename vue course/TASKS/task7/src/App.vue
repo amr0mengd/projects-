@@ -32,7 +32,7 @@ export default {
   },
   // setup() {
   //   // const goal = ref("Learn How To use Vue perfectly");
-  //   // let showStatus = ref(true);
+  //   // const showStatus = ref(true);
   //   //function toggle(){showStatus.value = !showStatus.value}
 
   //   // const goal = ref({
