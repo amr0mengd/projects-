@@ -9,3 +9,6 @@ header {
 #app {
   @apply mx-auto flex flex-col justify-center items-center w-[650px] h-fit p-7 shadow-2xl text-3xl font-bold;
 }
+button{
+  @apply border rounded-2xl py-1.5 px-3 border-amber-400 text-lg
+}
